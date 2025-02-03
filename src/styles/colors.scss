@@ -1,0 +1,26 @@
+// src/styles/colors.scss
+
+// Primary Colors
+$primary-color: #1a73e8;
+$secondary-color: #ffdc31;
+$accent-color: #ffdc49;
+$blue-color: $primary-color;
+$white-color: #ffffff;
+$light-gray: #f7f7f7;
+$dark-gray: #4a4a4a;
+$gray-color: #828282;
+
+// Border Colors
+$border-gray: #d8d8d8;
+$border-focus-color: $accent-color;
+
+// State Colors
+$hover-color: darken($blue-color, 10%);
+$disabled-bg: $light-gray;
+
+// Input Placeholder Color
+$placeholder-color: $secondary-color;
+
+// Additional
+$card-shadow: rgba(0, 0, 0, 0.1);
+$card-shadow-hover: rgba(0, 0, 0, 0.15);

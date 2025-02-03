@@ -1,0 +1,96 @@
+// src/styles/_mixins.scss
+
+// Mixin for box shadow
+@mixin box-shadow($color: rgba(0, 0, 0, 0.1), $spread: 4px, $blur: 12px) {
+  box-shadow: 0 $spread $blur $color;
+}
+
+// Mixin for centering content
+@mixin flex-center($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for transition on hover
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
+}
+
+// Mixin for button styling
+@mixin button-style($bg-color, $border-color, $text-color: $white-color) {
+  padding: 10px 20px;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: 600;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    border-color: darken($border-color, 10%);
+  }
+}
+
+// src/styles/_mixins.scss
+
+// Mixin for box-shadow
+@mixin box-shadow($color: rgba(0, 0, 0, 0.1), $spread: 4px, $blur: 12px) {
+  box-shadow: 0 $spread $blur $color;
+}
+
+// Mixin for flex centering
+@mixin flex-center($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for input styling
+@mixin input-style($border-color, $focus-border: $border-focus-color, $bg-color: $white-color, $color: $primary-color) {
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background-color: $bg-color;
+  color: $color;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: $focus-border;
+    box-shadow: 0 0 8px rgba(255, 220, 49, 0.3);
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+}
+
+// Mixin for button styling
+@mixin button-style($bg-color, $border-color, $text-color: $white-color) {
+  padding: 14px 20px;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:disabled {
+    background-color: $disabled-bg;
+    cursor: not-allowed;
+  }
+}

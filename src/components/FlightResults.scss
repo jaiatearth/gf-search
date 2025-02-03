@@ -1,0 +1,117 @@
+@import "../styles/colors.scss";
+@import "../styles/mixins.scss";
+
+.flight-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flight-card {
+  background-color: $white-color;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px $card-shadow;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid $border-gray;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px $card-shadow-hover;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+  .flight-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    .departure-arrival {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      font-weight: 500;
+      color: $dark-gray;
+
+      .departure, .arrival {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .time {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        .location {
+          font-size: 0.9rem;
+          color: $gray-color;
+        }
+      }
+    }
+
+    .airline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: $gray-color;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        object-fit: contain;
+      }
+    }
+
+    .duration {
+      font-size: 1rem;
+      color: $dark-gray;
+      font-weight: 600;
+    }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      button {
+        @include button-style($primary-color, $primary-color, $white-color);
+        width: 100%;
+      }
+    }
+  }
+}
+
+.no-results {
+  color: $secondary-color;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}

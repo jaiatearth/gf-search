@@ -1,0 +1,98 @@
+@import "../styles/colors.scss";
+@import "../styles/mixins.scss";
+
+.flight-search {
+  padding: 20px;
+  background-color: $white-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px $card-shadow;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #f2f2f2;
+
+  h2 {
+    color: $dark-gray;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .search-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+
+    // Responsive Design
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      color: $dark-gray;
+
+      label {
+        font-size: 14px;
+        color: $dark-gray;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      input,
+      select {
+        color: $dark-gray;
+        @include input-style($border-gray);
+        font-family: 'Roboto', sans-serif;;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      input[type="date"] {
+        cursor: pointer;
+      }
+
+      input::placeholder {
+        color: $gray-color;
+        font-weight: 600;
+      }
+
+      select {
+        padding: 14px;
+        color: $dark-gray;
+        border-radius: 6px;
+        border: 1px solid $border-gray;
+        appearance: none;
+
+        &:focus {
+          border-color: $accent-color;
+        }
+      }
+    }
+
+    button {
+      grid-column: span 2;
+      @include button-style($primary-color, $primary-color);
+      margin-top: 20px;
+    }
+    
+    button:disabled,
+    button[disabled]{
+      background-color: #cccccc;
+      color: #828282;
+    }
+  }
+
+  .no-results {
+    color: $secondary-color;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
